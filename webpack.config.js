@@ -14,8 +14,24 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 				},
+			}, {
+				test: /\.ts?$/,
+				loader: 'ts-loader',
+				exclude: /node_modules/,
+				options: {
+					appendTsSuffixTo: [/\.vue$/],
+				}
+			},{
+				test: /\.(png|jpg)$/,
+					loader: "url-loader",
 			},
 		],
+	},
+	resolve: {
+		extensions: ['.ts', '.js', '.vue', '.json'],
+		alias: {
+			'vue$': 'vue/dist/vue.esm.js'
+		}
 	},
 	optimization: {
 		splitChunks: {

@@ -7,3 +7,12 @@
 html {
 	box-sizing: border-box;
 }
+
+.content {
+	background-color: $color-bg_outside;
+	padding-top: 60px;
+	padding-bottom: 5.5rem;
+	@media(max-width: 640px){
+		padding: 1rem 0;
+	}
+}
